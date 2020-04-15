@@ -1,4 +1,4 @@
-import flask
+from flask import Flask
 import pickle
 import pandas as pd
 
@@ -8,7 +8,7 @@ with open(f'model/RF_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
-app = flask.Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates')
 
 def multiply(Age,Sex,Sc):
     a=int(Age)
