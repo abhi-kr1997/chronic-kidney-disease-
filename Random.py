@@ -1,14 +1,14 @@
-from flask import Flask
+import flask 
 import pickle
 import pandas as pd
 
 
 # Use pickle to load in the pre-trained model
-with open(f'model/RF_model.pkl', 'rb') as f:
+with open(f'RF_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialise the Flask app
-app = Flask(__name__, template_folder='templates')
+app = flask.Flask(__name__,template_folder="templates")
 
 def multiply(Age,Sex,Sc):
     a=int(Age)
